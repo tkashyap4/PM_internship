@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Internship - Browse All Internships</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="image_1.jpg" alt="PM Internship Logo" class="logo-img">
+                <span class="logo-text">PM Internship</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Dashboard</a>
+                <a href="#browse" class="nav-link active">Browse Internships</a>
+                <a href="my-applications.html" class="nav-link">My Applications</a>
+                <a href="profile.html" class="nav-link">Profile</a>
+                <div class="nav-user">
+                    <div class="user-profile">
+                        <!-- <div class="user-avatar">CS</div> -->
+                        <span class="user-name">Tushar</span>
+                    </div>
+                    <button class="logout-btn" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Browse Content -->
+    <main class="browse-main">
+        <!-- Search and Filter Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Find Your Perfect Internship</h1>
+                <p>Discover opportunities from top companies across India</p>
+
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class ="search-input" placeholder="Search by job title, company, or skills...">
+                    </div>
+                    <div class="location-input-wrapper">
+                        <i class="fas fa-map-marker-alt location-icon"></i>
+                        <input type="text" class ="search-input" placeholder="Location">
+                    </div>
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="browse-content">
+            <!-- Filters Sidebar -->
+            <aside class="filters-sidebar">
+                <div class="filters-header">
+                    <h3>Filters</h3>
+                    <button class="clear-filters-btn" id="clearFilters">Clear All</button>
+                </div>
+
+                <!-- Job Type Filter -->
+                <div class="filter-group">
+                    <h4>Job Type</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="full-time" checked>
+                            <span class="checkmark"></span>
+                            Full-time Internship
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="part-time">
+                            <span class="checkmark"></span>
+                            Part-time Internship
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="remote">
+                            <span class="checkmark"></span>
+                            Remote Work
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Duration Filter -->
+                <div class="filter-group">
+                    <h4>Duration</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="1-3">
+                            <span class="checkmark"></span>
+                            1-3 months
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="3-6" checked>
+                            <span class="checkmark"></span>
+                            3-6 months
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="6+">
+                            <span class="checkmark"></span>
+                            6+ months
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Stipend Filter -->
+                <div class="filter-group">
+                    <h4>Monthly Stipend</h4>
+                    <div class="stipend-range">
+                        <input type="range" id="stipendRange" min="0" max="50000" value="25000">
+                        <div class="range-labels">
+                            <span>₹0</span>
+                            <span id="stipendValue">₹25,000</span>
+                            <span>₹50,000+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Filter -->
+                <div class="filter-group">
+                    <h4>Skills</h4>
+                    <div class="skills-filter">
+                        <div class="skill-tags">
+                            <span class="skill-filter-tag active" data-skill="javascript">JavaScript</span>
+                            <span class="skill-filter-tag active" data-skill="react">React</span>
+                            <span class="skill-filter-tag" data-skill="python">Python</span>
+                            <span class="skill-filter-tag" data-skill="java">Java</span>
+                            <span class="skill-filter-tag active" data-skill="nodejs">Node.js</span>
+                            <span class="skill-filter-tag" data-skill="css">CSS</span>
+                            <span class="skill-filter-tag" data-skill="html">HTML</span>
+                            <span class="skill-filter-tag" data-skill="mongodb">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company Size Filter -->
+                <div class="filter-group">
+                    <h4>Company Size</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="startup">
+                            <span class="checkmark"></span>
+                            Startup (1-50)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="medium" checked>
+                            <span class="checkmark"></span>
+                            Medium (51-1000)
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="large" checked>
+                            <span class="checkmark"></span>
+                            Large (1000+)
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Results Area -->
+            <div class="results-area">
+                <!-- Results Header -->
+                <div class="results-header">
+                    <div class="results-info">
+                        <h2 id="resultsCount">Showing 156 internships</h2>
+                        <p>Based on your preferences and location</p>
+                    </div>
+                    <div class="sort-options">
+                        <label for="sortSelect">Sort by:</label>
+                        <select id="sortSelect">
+                            <option value="relevance">Most Relevant</option>
+                            <option value="date">Newest First</option>
+                            <option value="stipend">Highest Stipend</option>
+                            <option value="match">Best Match</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Internship Listings -->
+                <div class="internships-grid" id="internshipsGrid">
+                    <!-- Internship cards will be dynamically loaded here -->
+                </div>
+
+                <!-- Load More Button -->
+                <div class="load-more-container">
+                    <button class="load-more-btn" id="loadMoreBtn">
+                        <i class="fas fa-plus"></i>
+                        Load More Internships
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Job Details Modal -->
+    <div id="jobDetailsModal" class="modal">
+        <div class="modal-content job-modal">
+            <div class="modal-header">
+                <h2 id="modalJobTitle">Job Title</h2>
+                <button class="close-btn" onclick="closeJobModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="jobDetailsContent">
+                    <!-- Job details will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary" onclick="closeJobModal()">Close</button>
+                <button class="btn primary" id="modalApplyBtn">
+                    <i class="fas fa-paper-plane"></i>
+                    Apply Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <script src="../src/browse.js"></script>
+</body>
+</html>

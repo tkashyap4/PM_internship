@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Internship - My Profile</title>
+    <link rel="stylesheet" href="/style2.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/image_1.jpg" alt="PM Internship Logo" class="logo-img">
+                <span class="logo-text">PM Internship</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Dashboard</a>
+                <a href="browse-internships.html" class="nav-link">Browse Internships</a>
+                <a href="my-applications.html" class="nav-link">My Applications</a>
+                <a href="#profile" class="nav-link">Profile</a>
+                <div class="nav-user">
+                    <div class="user-profile">
+                        <!-- <div class="user-avatar">CS</div> -->
+                        <span class="user-name">Tushar</span>
+                    </div>
+                    <button class="logout-btn" id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Profile Content -->
+    <main class="profile-main">
+        <div class="profile-container">
+            <!-- Profile Header -->
+            <section class="profile-header">
+                <div class="profile-cover">
+                    <button class="change-cover-btn">
+                        <i class="fas fa-camera"></i>
+                        Change Cover
+                    </button>
+                </div>
+                <div class="profile-info">
+                    <div class="profile-avatar-section">
+                        <div class="profile-avatar large">CS</div>
+                        <button class="change-avatar-btn">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="profile-details">
+                        <h1 id="profileName">Computer Science Student</h1>
+                        <p class="profile-title">BTech Computer Science • Final Year</p>
+                        <p class="profile-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Mumbai, Maharashtra
+                        </p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <span class="stat-number">85%</span>
+                                <span class="stat-label">Profile Complete</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">25</span>
+                                <span class="stat-label">Applications</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">4.2</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn primary" id="editProfileBtn">
+                            <i class="fas fa-edit"></i>
+                            Edit Profile
+                        </button>
+                        <button class="btn secondary" id="downloadResumeBtn">
+                            <i class="fas fa-download"></i>
+                            Download Resume
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Content -->
+            <div class="profile-content">
+                <!-- Left Column -->
+                <div class="profile-left">
+                    <!-- About Section -->
+                    <section class="profile-section">
+                        <h2>About</h2>
+                        <div class="section-content">
+                            <p id="aboutText">
+                                Passionate Computer Science student with expertise in full-stack web development. 
+                                Experienced in JavaScript, React, Node.js, and MongoDB. Looking for internship 
+                                opportunities to apply my skills in real-world projects and learn from industry experts.
+                            </p>
+                            <button class="edit-btn" onclick="editAbout()">
+                                <i class="fas fa-edit"></i>
+                                Edit
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Skills Section -->
+                    <section class="profile-section">
+                        <h2>Skills</h2>
+                        <div class="section-content">
+                            <div class="skills-grid" id="skillsGrid">
+                                <div class="skill-item">
+                                    <span class="skill-name">JavaScript</span>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">React</span>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                    <span class="skill-percentage">85%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Node.js</span>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 80%"></div>
+                                    </div>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">MongoDB</span>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 75%"></div>
+                                    </div>
+                                    <span class="skill-percentage">75%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Python</span>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 70%"></div>
+                                    </div>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">CSS</span>
+                                    <div class="skill-level">
+                                        <div class="skill-progress" style="width: 88%"></div>
+                                    </div>
+                                    <span class="skill-percentage">88%</span>
+                                </div>
+                            </div>
+                            <button class="add-skill-btn" onclick="addNewSkill()">
+                                <i class="fas fa-plus"></i>
+                                Add Skill
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Education Section -->
+                    <section class="profile-section">
+                        <h2>Education</h2>
+                        <div class="section-content">
+                            <div class="education-item">
+                                <div class="education-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="education-details">
+                                    <h3>Bachelor of Technology in Computer Science</h3>
+                                    <p class="institution">Indian Institute of Technology, Mumbai</p>
+                                    <p class="duration">2022 - 2026 (Expected)</p>
+                                    <p class="grade">CGPA: 8.5/10</p>
+                                </div>
+                                <button class="edit-btn" onclick="editEducation()">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                            <button class="add-education-btn" onclick="addEducation()">
+                                <i class="fas fa-plus"></i>
+                                Add Education
+                            </button>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column -->
+                <div class="profile-right">
+                    <!-- Contact Information -->
+                    <section class="profile-section">
+                        <h2>Contact Information</h2>
+                        <div class="section-content">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>student@pminternship.in</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+91 98765 43210</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin"></i>
+                                <span>linkedin.com/in/cs-student</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <span>github.com/cs-student</span>
+                            </div>
+                            <button class="edit-btn" onclick="editContact()">
+                                <i class="fas fa-edit"></i>
+                                Edit Contact
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Projects Section -->
+                    <section class="profile-section">
+                        <h2>Projects</h2>
+                        <div class="section-content">
+                            <div class="project-item">
+                                <h3>E-Commerce Web Application</h3>
+                                <p class="project-description">
+                                    Full-stack e-commerce platform built with MERN stack. Features include 
+                                    user authentication, product catalog, shopping cart, and payment integration.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                    <span class="tech-tag">Express</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                        GitHub
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-item">
+                                <h3>Task Management App</h3>
+                                <p class="project-description">
+                                    A collaborative task management application with real-time updates, 
+                                    drag-and-drop functionality, and team collaboration features.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">Material-UI</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                        GitHub
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="add-project-btn" onclick="addProject()">
+                                <i class="fas fa-plus"></i>
+                                Add Project
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Certifications Section -->
+                    <section class="profile-section">
+                        <h2>Certifications</h2>
+                        <div class="section-content">
+                            <div class="certification-item">
+                                <div class="cert-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="cert-details">
+                                    <h3>Full Stack Web Development</h3>
+                                    <p class="cert-issuer">freeCodeCamp</p>
+                                    <p class="cert-date">Issued: March 2025</p>
+                                </div>
+                            </div>
+                            <div class="certification-item">
+                                <div class="cert-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="cert-details">
+                                    <h3>JavaScript Algorithms and Data Structures</h3>
+                                    <p class="cert-issuer">freeCodeCamp</p>
+                                    <p class="cert-date">Issued: January 2025</p>
+                                </div>
+                            </div>
+                            <button class="add-cert-btn" onclick="addCertification()">
+                                <i class="fas fa-plus"></i>
+                                Add Certification
+                            </button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Edit Profile Modal -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Profile</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editProfileForm">
+                    <div class="form-group">
+                        <label for="editName">Full Name</label>
+                        <input type="text" id="editName" value="Computer Science Student">
+                    </div>
+                    <div class="form-group">
+                        <label for="editTitle">Professional Title</label>
+                        <input type="text" id="editTitle" value="BTech Computer Science • Final Year">
+                    </div>
+                    <div class="form-group">
+                        <label for="editLocation">Location</label>
+                        <input type="text" id="editLocation" value="Mumbai, Maharashtra">
+                    </div>
+                    <div class="form-group">
+                        <label for="editAbout">About</label>
+                        <textarea id="editAbout" rows="4">Passionate Computer Science student with expertise in full-stack web development. Experienced in JavaScript, React, Node.js, and MongoDB. Looking for internship opportunities to apply my skills in real-world projects and learn from industry experts.</textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary" onclick="closeModal()">Cancel</button>
+                <button class="btn primary" onclick="saveProfile()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <script src="../src/profile.js"></script>
+</body>
+</html>
